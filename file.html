@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/834915ba67.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sign In</h1>
+        <form action="#" onsubmit="return validation()">
+            <div class="box">
+                <i class="fa-solid fa-user "></i>
+                <input type="text" name="Username" id="user" placeholder="Enter Username">
+                <p class="email-error" id="username"> </p>
+            </div>
+            <div class="box">
+                <i class="fa fa-unlock"></i>
+                <input type="password" name="password" id="pass" placeholder="Enter Password">
+                <p class="email-error" id="password"> </p>
+                    
+            </div>
+            <div class="remember">
+                <label for="">
+                    <input type="checkbox" name="" id=""> Remember Me
+                </label>
+                <span class="forget"> Forget Password</span>
+            </div>
+            <button class="btn">Submit</button>
+            <p class="account">Create an accout? <a href="#">Sign Up</a></p>
+            
+        </form>
+        </div>
+</body>
+<script>
+    
+
+    function validation() {
+
+               var user= document.getElementById("user").value;
+               var passing = document.getElementById("pass").value;
+               if(user == ""){
+                document.getElementById('username').innerHTML = " *Please fill the username field";
+                return false;
+               }
+               if(user.length <=3) {
+                document.getElementById('username').innerHTML = " *user length must be greater than 3";
+                return false;
+               }
+              
+               if(passing == ""){
+                document.getElementById('password').innerHTML = " *Please fill the Password field";
+                return false;
+               }
+               if(passing.length <=7) {
+                document.getElementById('password').innerHTML = " *Password length must be greater than 7";
+                return false;
+               }
+    }
+
+</script>
+
+</html>
